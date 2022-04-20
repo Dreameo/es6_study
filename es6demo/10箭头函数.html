@@ -1,0 +1,39 @@
+<script>
+    // 函数或者方法体的简化写法
+
+    // 参数==》函数体
+
+    // 传统创建函数写法
+    var f1 = function(m) {
+        return m
+    }
+    // 调用
+    console.log(f1(8))
+
+    // 使用箭头函数改造
+
+    var f2 = m => m
+
+    // 调用
+    console.log(f2(8))
+
+
+    // 多参数
+    var f3 = function(a, b) {
+        var result = a + b
+        return result
+    }
+
+    // 调用
+    console.log(f3(2, 3)) // 5
+
+
+    // 箭头函数改造
+
+    var f4 = (a, b) => a + b
+    // 调用
+    console.log(f4(3, 5)) // 8
+
+
+
+</script>

@@ -1,0 +1,19 @@
+<script>
+    // ES标准中不包含 DOM 和 BOM的定义，只涵盖基本数据类型、关键字、语句、运算符、内建对象、内建函数等通用语法
+    // js 定义变量  var a = 10;
+    // es6 定义变量  let a = 10; 
+    // 区别： let定义的变量有范围， var没有范围
+
+    // 1. 在代码块中定义变量
+    {
+        var a = 10
+        let b = 10
+    }
+
+    // 2. 在代码外面输出变量
+    console.log(a)  // 能输出a的值
+    console.log(b) // 因为有作用范围，所以这里会出现 未定义错误  Uncaught ReferenceError: b is not defined
+
+    
+
+</script>

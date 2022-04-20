@@ -1,0 +1,26 @@
+<script>
+    // `号的使用
+    // 1. 可以让字符串进行换行
+
+    let str1 = `hello 
+    vscode  es6 111`
+
+    console.log(str1)
+
+    // 2. ``里面的字符串可以 配合${}取变量的值
+    let name = "Mike"
+    let age = 29
+
+    let info = `My name is ${name}, I am ${age + 1} years old`
+
+    console.log(info) // 输出info  My name is Mike, I am 30 years old
+
+    // 3. 在``里可以调用函数
+
+    function f1() {
+        return "hello f1"
+    }
+
+    let str3 = `demo ${f1()}` 
+    console.log(str3) // demo hello f1
+</script>
