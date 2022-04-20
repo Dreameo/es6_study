@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios-01</title>
+</head>
+<body>
+    
+
+    <div id="app">
+        <table border="1">
+            <tr v-for="user in userList">
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="axios.min.js"></script>
+    
+    <script>
+
+        // 需求：创建一个手动构造的json文件， 使用axios发送ajax请求文件中的数据
+
+       new Vue({
+           el: '#app',
+           // 固定结构 
+           data: { // data里面可以定义变量和初始值
+                // 定义变量，接受数据
+                userList:[]
+           },
+           created() { // 页面渲染之前执行
+            // 调用方法
+            this.getUserList()  // 写了函数，需要进行调用
+           }, 
+           methods: { // 编写具体的方法
+                // 创建方法，查询所有用户数据
+                getUserList(){
+                    // 使用axios发送ajax请求
+                    // axios.提交方式("请求接口路径").then(箭头函数).catch(箭头函数)
+                    axios.get("data.json")
+                    .then(response => { // 箭头函数 response就是请求到的数据
+                        console.log(response) // 数据在 response.data
+
+                        console.log(response.data.data.items)
+                        
+                        this.userList = response.data.data.items
+
+                    }) // 当axios请求成功， then方法执行
+                    .catch(error => { // 箭头函数
+
+                    }) // 当请求失败， catch失败
+                }
+           }
+
+       })
+    </script>
+    
+</body>
+</html>
